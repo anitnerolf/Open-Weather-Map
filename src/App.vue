@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <OpenWeatherMap msg="Welcome to Open Weather Map" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import OpenWeatherMap from './components/OpenWeatherMap.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    OpenWeatherMap
   }
 }
 </script>
