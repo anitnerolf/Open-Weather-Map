@@ -6,8 +6,8 @@
         <input
           type="text"
           class="form-control text-muted form-rounded p-4 shadow-sm"
-          placeholder="What City?"
-          v-model="citySearch"
+          placeholder="Search for a place"
+          v-model="cityNames"
           autocomplete="off"
         />
       </form>
@@ -21,7 +21,6 @@ export default {
   data () {
     return {
         cityNames: "",
-        citySearch: "",
         weather: {
         },
     };
@@ -29,15 +28,15 @@ export default {
   methods: {
       // async function getWeather() {
       getWeather: async function() {
-        console.log(this.cityNames);
-        // const weatherAPI = 'ca72b6ea7aee294a1c96bb8631b1f7a4';
-        const weatherAPI = "6a093b7057e5a7dc9fb69f84e336ac5c";
+        console.log("---> bllaa", this.cityNames);
+        const weatherAPI = 'ca72b6ea7aee294a1c96bb8631b1f7a4';
+        // const weatherAPI = "6a093b7057e5a7dc9fb69f84e336ac5c";
         const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${this.cityNames}&appid=${weatherAPI}&units=metric`;
 
         try {
           const response = await fetch(weatherURL);
           const data = await response.json();
-          console.log(data);
+          console.log("---->", data);
           this.cityNames = "";
         } catch (error) {
           console.log(error);
